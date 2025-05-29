@@ -1,4 +1,4 @@
-class HTTPRequest {
+export class HTTPRequest {
   constructor(
     public url: string,
     public method: string,
