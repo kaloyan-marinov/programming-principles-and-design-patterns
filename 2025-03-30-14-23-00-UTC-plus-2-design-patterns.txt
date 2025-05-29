@@ -104,6 +104,13 @@ notes:
 
     creational pattern #3: Factory Pattern
 
+        [it could be helpful to use the Factory Pattern]
+        when object creation involes complex setup
+        or
+        when [your application/system needs to be able to create] multiple related types;
+        [however,]
+        for simple objects, a regular constructor is fine
+
         think about creating different types of users in your [application/system, e.g.]
         you [might have]
             admins[, ...]
@@ -111,9 +118,7 @@ notes:
             moderators
 
         without a factory[,]
-        ... if type admin, user create new admin
-        ... or type moderator[,] user new moderator
-        ... else[,] user new regular user
+        the implementation might look like `2025-03-30-14-23-03-factory-pattern.ts`
 
         if we were to follow the factory pattern[,]
         [... any] messy logic [for] object creation ... is hidden in the factory class
