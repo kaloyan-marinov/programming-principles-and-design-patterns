@@ -1,0 +1,257 @@
+2025-03-30-14-23-00-UTC-7-design-patterns.txt
+
+
+
+source:
+
+    (
+    yt
+    >>
+    ForrestKnight
+    >>
+    7 Design Patterns EVERY Developer Should Know
+    )
+
+
+
+notes:
+
+    [this video discusses and provides examples for]
+    7 different software design patterns
+    many of which you already use whether you realize it or not
+    (
+    because, simply put,
+    they are solutions to common programming problems
+    that appear over and over and over and over
+    - regardless of what language or platform you're using
+    )
+
+
+
+    back in 1994,
+    ... four developers known as "the Gang of Four" wrote [a] book
+    [in which] they documented, cataloged, and formalized 23 commonly used design patterns 
+
+    [this video is] not going to go over all 23
+    but ... note that all 23 do fall into 3 [categories]
+
+        creational patterns
+
+            are all about object creation
+
+            so, instead of creating objects directly,
+            these patterns give you more flexibility
+            on how objects come into existence
+
+        structural patterns
+
+            deal with how objects relate to each other
+
+        behavioral patterns
+
+            handle communication between objects,
+            how they interact and distribute responsibilities
+
+
+
+    creational pattern #1: Singleton Pattern
+
+        use the Singleton pattern
+        when you absolutely need a single instance that's accessible globally
+        (
+        like a database connection pool
+        or
+        the logger
+        )
+
+        but it does have some trade-offs
+
+            the good is that
+            you get guaranteed single instance and global access
+
+            the bad is that ...
+            it's a bit of a nightmare to test and that's because you can't easily mock it;
+            ... also in multi-threaded environments[,]
+            you need special handling to prevent creating multiple instances
+
+
+
+    creational pattern #2: Builder Pattern
+
+        ever tried to create something that has like 15 different optional parameters?
+
+        think about creating a complex API request
+
+            you've got
+            headers
+            query params,
+            body data,
+            ... timeout settings,
+            retry logic,
+            [...]
+
+            trying to do all of that in a single Construction will look [lengthy]
+
+        the beauty of the Builder Pattern is that
+        you can chain methods in any order;
+        you can skip the optional ones;
+        and your code actually reads like English
+
+
+
+    creational pattern #3: Factory Pattern
+
+        think about creating different types of users in your [application/system, e.g.]
+        you [might have]
+            admins[, ...]
+            regular users[, ...]
+            moderators
+
+        without a factory[,]
+        ... if type admin, user create new admin
+        ... or type moderator[,] user new moderator
+        ... else[,] user new regular user
+
+        if we were to follow the factory pattern[,]
+        [... any] messy logic [for] object creation ... is hidden in the factory class
+        and
+        all we have to do to create a new user is [call a `build` method on the factory]
+
+        ... you don't need to know any of that
+        or at least you don't need to focus on that
+        every single time you see ... you need to create a new user
+
+        the downside of a factory is that
+        you're adding another layer of abstraction
+
+        the upside of a factory is that
+        all of the creation logic is in the same place - in that factory class
+
+
+
+    structural pattern # 1: Facade Pattern
+
+        [the Facade Pattern] is exactly what it sounds like:
+        putting up a a pretty front to hide everything behind it
+
+        (
+        and you may be saying,
+        "well, isn't this kind of similar to ... the Factory Pattern?
+
+        ...
+        remember:
+        creational patterns are for object creation;
+        structural patterns are how objects relate to each each other;
+        )
+
+        the Facade Pattern ... is kind of odd [in that]...
+        it's [been formalized as] a pattern
+
+            ... it makes sense[,] it's fully detailed [in the book by the Gang of Four,]
+            but - really - ... it's ... just good programming technique;
+            ... all of these [design patterns] are good programming technique[s]
+            but [the Facade Pattern] is really hard to miss anyway
+
+            ...
+
+            it's ... just a really fancy word for encapsulation
+
+        use a facade pattern
+        when you ... have a mess of complex subsystems that you need to [integrate with one another];
+        [what the Facade Pattern achieves gets you is] ...
+            the outward appearance of [an] interface or class [executing all of your business logic]
+            and
+            it hides all of all the complexity [constituting yoru business logic]
+
+        [one] downside [of using the Facade Pattern] is
+        it could [balloon into]
+        knowing too much and doing too much
+
+        [it is interesting to note that]
+        you're probably using [tools that leverage the Facade Pattern] all the time ...
+
+            think of a HTTP client:
+                
+                - you just call fetch API users and you get your data ...
+
+                - you don't care about
+                  TCP connections
+                  or retry logic
+                  or header parsing
+                  or any of that low-level stuff
+
+            [certain constructs] built into programming languages
+            like an `ArrayList` in Java:
+
+                - it's hiding all sorts of array resizing complexity
+                  behind a clean interface `ArrayList`
+
+    
+
+    structural pattern #2: Adapter Pattern
+
+        you want to use the Adapter Pattern
+        when you're integrating third-party libraries or APIs
+        that don't quite match what your code expects
+
+        so let's say [some] third-party weather API gives us
+        [the temperature] in Celsius [and the wind speed] in kilometers[-per-hour];
+        however, our [system/application] is expecting
+        [the temperature] Fahrenheit and [and the wind speed] in miles[-per-hour]
+
+        or if [your system/application is using] a library
+        [returns data structures which don't quite match what your code expects,] ...
+        all you have to do is wrap it in and adapt
+
+
+
+    behavioral patter #1: Strategy Pattern
+
+        define a a family of algorithms...[,]
+        put each into its own class,
+        and then make them completely interchangeable
+
+        (
+        or,
+        in other words,
+        it's just a fancy way of saying
+        "programming at an interface level"
+
+        letting you swap implementations without you needing to change any of your code
+
+        it follows the open closed principle perfectly
+
+        you can add new strategies without touching any existing code
+        )
+
+
+
+    behavioral pattern #2: Observer Pattern
+
+        objects subscribe to events that happen to other objects
+
+        ...
+
+        this could be ...
+        
+            servers looking for system errors or monitoring for them
+            (so anytime there's a system error ..., it gets notified)
+
+            or
+
+            a component listening for ... state changes
+
+        so remember object
+
+        ...
+    
+        the Observer pattern is is
+        a ... way to handle the ... "if this happens, do that"
+
+
+
+    Know When to Use Each One
+
+        like any good tool,
+        it's [important to know] when to use each one
+        [and when not to use it]
