@@ -1,7 +1,3 @@
-2025-03-30-14-23-00-UTC-7-design-patterns.txt
-
-
-
 source:
 
     (
@@ -18,11 +14,14 @@ notes:
 
     [this video discusses and provides examples for]
     7 different software design patterns
-    many of which you already use whether you realize it or not
+    
+    [it is highly likely that you are already using some of those patterns,]
+    whether you realize it or not
+    
     (
-    because, simply put,
+    simply put,
     they are solutions to common programming problems
-    that appear over and over and over and over
+    that appear over and over ...
     - regardless of what language or platform you're using
     )
 
@@ -30,7 +29,7 @@ notes:
 
     back in 1994,
     ... four developers known as "the Gang of Four" wrote [a] book
-    [in which] they documented, cataloged, and formalized 23 commonly used design patterns 
+    [in which] they documented and formalized 23 commonly used design patterns 
 
     [this video is] not going to go over all 23
     but ... note that all 23 do fall into 3 [categories]
@@ -40,7 +39,7 @@ notes:
             are all about object creation
 
             so, instead of creating objects directly,
-            these patterns give you more flexibility
+            these patterns [provide] more flexibility
             on how objects come into existence
 
         structural patterns
@@ -56,7 +55,7 @@ notes:
 
     creational pattern #1: Singleton Pattern
 
-        use the Singleton pattern
+        [it could be helpful to] use the Singleton pattern
         when you absolutely need a single instance that's accessible globally
         (
         like a database connection pool
@@ -70,15 +69,19 @@ notes:
             you get guaranteed single instance and global access
 
             the bad is that ...
-            it's a bit of a nightmare to test and that's because you can't easily mock it;
-            ... also in multi-threaded environments[,]
-            you need special handling to prevent creating multiple instances
+                
+                it's a bit of a nightmare to test
+                and that's because you can't easily mock it;
+            
+                ... also in multi-threaded environments[,]
+                you need special handling to prevent creating multiple instances
 
 
 
     creational pattern #2: Builder Pattern
 
-        ever tried to create something that has like 15 different optional parameters?
+        [it could be helpful to use the Builder Pattern]
+        [when you need] to create something that has [a large number of] optional parameters ...
 
         think about creating a complex API request
 
@@ -132,7 +135,7 @@ notes:
     structural pattern # 1: Facade Pattern
 
         [the Facade Pattern] is exactly what it sounds like:
-        putting up a a pretty front to hide everything behind it
+        putting up a pretty front to hide everything behind it
 
         (
         and you may be saying,
@@ -141,7 +144,7 @@ notes:
         ...
         remember:
         creational patterns are for object creation;
-        structural patterns are how objects relate to each each other;
+        structural patterns are how objects relate to each other;
         )
 
         the Facade Pattern ... is kind of odd [in that]...
@@ -161,7 +164,7 @@ notes:
         [what the Facade Pattern achieves gets you is] ...
             the outward appearance of [an] interface or class [executing all of your business logic]
             and
-            it hides all of all the complexity [constituting yoru business logic]
+            it hides all of all the complexity [constituting your business logic]
 
         [one] downside [of using the Facade Pattern] is
         it could [balloon into]
@@ -197,11 +200,11 @@ notes:
         so let's say [some] third-party weather API gives us
         [the temperature] in Celsius [and the wind speed] in kilometers[-per-hour];
         however, our [system/application] is expecting
-        [the temperature] Fahrenheit and [and the wind speed] in miles[-per-hour]
+        [the temperature in] Fahrenheit and [and the wind speed in] miles[-per-hour]
 
         or if [your system/application is using] a library
         [returns data structures which don't quite match what your code expects,] ...
-        all you have to do is wrap it in and adapt
+        all you have to do is wrap it in [an adapter class]
 
 
 
@@ -219,7 +222,7 @@ notes:
 
         letting you swap implementations without you needing to change any of your code
 
-        it follows the open closed principle perfectly
+        it follows the open-closed principle perfectly
 
         you can add new strategies without touching any existing code
         )
