@@ -9,4 +9,7 @@
 
   "editor.acceptSuggestionOnCommitCharacter": false,
 
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true
 }
