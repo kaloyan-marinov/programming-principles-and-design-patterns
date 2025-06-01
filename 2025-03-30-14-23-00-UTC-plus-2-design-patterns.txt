@@ -196,18 +196,17 @@ notes:
 
     structural pattern #2: Adapter Pattern
 
-        you want to use the Adapter Pattern
-        when you're integrating third-party libraries or APIs
-        that don't quite match what your code expects
+        [it could be helpful to use] the Adapter Pattern
+        when [your code invokes]
+            [a] third-party [library]
+            or
+            [a web API]
+        that [returns data structures or data
+        which don't quite match what your code expects]
 
-        so let's say [some] third-party weather API gives us
-        [the temperature] in Celsius [and the wind speed] in kilometers[-per-hour];
-        however, our [system/application] is expecting
-        [the temperature in] Fahrenheit and [and the wind speed in] miles[-per-hour]
-
-        or if [your system/application is using] a library
-        [returns data structures which don't quite match what your code expects,] ...
-        all you have to do is wrap it in [an adapter class]
+        [to handle such a situation,]
+        all you have to [or, arguably, ought to] do is
+        to wrap [the invocations of the 3rd-party component] in [an adapter class]
 
 
 
