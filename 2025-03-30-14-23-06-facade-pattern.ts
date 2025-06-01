@@ -1,41 +1,32 @@
-class OrderSystem {
-  private paymentProcessor: PaymentProcessor;
-  private inventorySystem: InventorySystem;
-  private shippingCalculator: ShippingCalculator;
-  private fraudChecker: FraudChecker;
+/*
+This file does NOT leverage the Facada Pattern.
+*/
 
-  constructor() {
-    const paymentProcessor = new PaymentProcessor();
-    const inventorySystem = new InventorySystem();
-    const shippingCalculator = new ShippingCalculator();
-    const fraudChecker = new FraudChecker();
-  }
+import {
+  FraudChecker,
+  InventorySystem,
+  ShippingCalculator,
+  PaymentProcessor,
+  USER,
+  PRODUCT,
+  ADDRESS,
+} from "./2025-03-30-14-23-05-facade-pattern";
 
-  placeOrder(user: User, product: Product, address: Address): boolean {
-    try {
-      // Check for fraud
-      if (!this.fraudChecker.verify(user)) {
-        throw new Error('Fraud check failed')
-      }
+const fraudChecker = new FraudChecker();
+const inventorySystem = new InventorySystem();
+const shippingCalculator = new ShippingCalculator();
+const paymentProcessor = new PaymentProcessor();
 
-      // Check inventory
-      if (!this.inventorySystem.checkStock(product)) {
-        throw new Error('Product out of stock')
-      }
+if (fraudChecker.verify(USER)) {
+  if (inventorySystem.checkStock(PRODUCT)) {
+    const shipping = shippingCalculator.compute(ADDRESS);
 
-      // Calculate shipping
-      const shipping = this.shippingCalculator.compute(address)
+    if (paymentProcessor.charge(USER, PRODUCT.price + shipping)) {
+      inventorySystem.reserve(PRODUCT);
 
-      // Process payment
-      const total = product.price + shipping;
-      if (!this.paymentProcessor.charge(user, total)) {
-        throw new Error('Payment failed')
-      }
-    } catch () {
-
+      /*
+      There can be - and there usually is - even more logic here.
+      */
     }
   }
 }
-
-const orderSystem = new OrderSystem();
-orderSystem.placeOrder(user, product, address);

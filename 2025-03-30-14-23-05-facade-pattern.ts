@@ -12,7 +12,7 @@ export class FraudChecker {
   }
 }
 
-interface IProduct {
+export interface IProduct {
   name: string;
   price: number;
 }
@@ -56,17 +56,6 @@ export class ShippingCalculator {
   }
 }
 
-export const user: IUser = {
-  id: 17,
-};
-
-export const product: IProduct = {
-  name: "chair",
-  price: 100,
-};
-
-export const address: string = "100 Main Street / Boston, MA / USA";
-
 export class PaymentProcessor {
   constructor() {}
 
@@ -78,21 +67,13 @@ export class PaymentProcessor {
   }
 }
 
-const fraudChecker = new FraudChecker();
-const inventorySystem = new InventorySystem();
-const shippingCalculator = new ShippingCalculator();
-const paymentProcessor = new PaymentProcessor();
+export const USER: IUser = {
+  id: 17,
+};
 
-if (fraudChecker.verify(user)) {
-  if (inventorySystem.checkStock(product)) {
-    const shipping = shippingCalculator.compute(address);
+export const PRODUCT: IProduct = {
+  name: "chair",
+  price: 100,
+};
 
-    if (paymentProcessor.charge(user, product.price + shipping)) {
-      inventorySystem.reserve(product);
-
-      /*
-      There can be - and there usually is - even more logic here.
-      */
-    }
-  }
-}
+export const ADDRESS: string = "100 Main Street / Boston, MA / USA";
