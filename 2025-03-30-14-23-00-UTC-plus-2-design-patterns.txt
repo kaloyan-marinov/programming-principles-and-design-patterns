@@ -23,13 +23,15 @@ notes:
     they are solutions to common programming problems
     that appear over and over ...
     - regardless of what language or platform you're using
+
+    all of these [design patterns] are good programming technique[s]
     )
 
 
 
     back in 1994,
     ... four developers known as "the Gang of Four" wrote [a] book
-    [in which] they documented and formalized 23 commonly used design patterns 
+    [in which] they documented and formalized 23 commonly used design patterns
 
     [this video is] not going to go over all 23
     but ... note that all 23 do fall into 3 [categories]
@@ -139,8 +141,16 @@ notes:
 
     structural pattern # 1: Facade Pattern
 
-        [the Facade Pattern] is exactly what it sounds like:
-        putting up a pretty front to hide everything behind it
+        [it could be helpful to use the Facade Pattern]
+        when you ... have a [lot] of ... subsystems
+        that you need to [integrate with one another]
+
+        [the Facade Pattern]
+
+            is exactly what it sounds like:
+            putting up a pretty front to hide everything behind it
+
+            [can be viewed as] just a really fancy word for "encapsulation"
 
         (
         and you may be saying,
@@ -149,38 +159,26 @@ notes:
         ...
         remember:
         creational patterns are for object creation;
-        structural patterns are how objects relate to each other;
+        structural patterns are for how objects relate to one another;
         )
 
-        the Facade Pattern ... is kind of odd [in that]...
-        it's [been formalized as] a pattern
-
-            ... it makes sense[,] it's fully detailed [in the book by the Gang of Four,]
-            but - really - ... it's ... just good programming technique;
-            ... all of these [design patterns] are good programming technique[s]
-            but [the Facade Pattern] is really hard to miss anyway
-
-            ...
-
-            it's ... just a really fancy word for encapsulation
-
-        use a facade pattern
-        when you ... have a mess of complex subsystems that you need to [integrate with one another];
-        [what the Facade Pattern achieves gets you is] ...
+        [the upside of the Facade Pattern is] ...
             the outward appearance of [an] interface or class [executing all of your business logic]
             and
             it hides all of all the complexity [constituting your business logic]
 
         [one] downside [of using the Facade Pattern] is
-        it could [balloon into]
-        knowing too much and doing too much
+            it could [balloon into]
+            knowing too much and doing too much
+
+        ---------------------------------------------------------------------------------
 
         [it is interesting to note that]
         you're probably using [tools that leverage the Facade Pattern] all the time ...
 
             think of a HTTP client:
                 
-                - you just call fetch API users and you get your data ...
+                - you just call "fetch API users" and you get your data ...
 
                 - you don't care about
                   TCP connections
