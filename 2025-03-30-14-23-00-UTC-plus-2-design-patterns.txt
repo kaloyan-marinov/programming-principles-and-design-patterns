@@ -252,7 +252,7 @@ notes:
 
     behavioral pattern #2: Observer Pattern
 
-        objects subscribe to events that happen to other objects
+        let objects subscribe to events that happen to other objects
 
         ...
 
@@ -269,7 +269,7 @@ notes:
 
         ...
     
-        the Observer pattern is is
+        the Observer pattern is
         a ... way to handle the ... "if this happens, do that"
 
 
