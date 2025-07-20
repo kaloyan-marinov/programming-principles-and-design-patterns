@@ -11,6 +11,6 @@ if ((weatherAPI.getTempC() * 9) / 5 + 32 > 75) {
   console.log("It's hot!");
 }
 
-if (weatherAPI.getWindSpeedKPHH() * 0.621371 > 10) {
+if (weatherAPI.getWindSpeedKPH() * 0.621371 > 10) {
   console.log("It's windy!");
 }

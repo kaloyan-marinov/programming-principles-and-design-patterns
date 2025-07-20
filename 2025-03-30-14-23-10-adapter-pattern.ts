@@ -28,7 +28,7 @@ class WeatherAdapter implements WeatherApp {
   }
 
   getWindSpeedMPH(): number {
-    return this.weatherAPI.getWindSpeedKPHH() * 0.621371;
+    return this.weatherAPI.getWindSpeedKPH() * 0.621371;
   }
 }
 

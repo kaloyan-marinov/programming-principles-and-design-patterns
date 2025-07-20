@@ -2,7 +2,7 @@
 export interface WeatherAPI {
   getTempC(): number;
   getHumidity(): number;
-  getWindSpeedKPHH(): number;
+  getWindSpeedKPH(): number;
 }
 
 // Our app's expected interface
@@ -23,7 +23,7 @@ export class ThirdPartyWeatherAPI implements WeatherAPI {
     // Example: 65%
     return 65;
   }
-  getWindSpeedKPHH(): number {
+  getWindSpeedKPH(): number {
     // Example: 15 kph
     return 15;
   }
