@@ -212,25 +212,38 @@ notes:
 
     behavioral patter #1: Strategy Pattern
 
-        define a a family of algorithms...[,]
+        [it could be helpful to use] the Strategy Pattern
+        [when you have] a family of algorithms
+        [which your applications needs to treat as] completely interchangeable
+
+        define a family of algorithms...[,]
         put each into its own class,
         and then make them completely interchangeable
 
-        (
-        or,
-        in other words,
         it's just a fancy way of saying
         "programming at an interface level"
 
-        letting you swap implementations without you needing to change any of your code
+            [
+            write an interface
+            which is an abstract representation of a strategy/algorithm
+            ]
+
+            [for each algorithm in your] family of algorithms,
+            put each into its own class
+        
+            that renders
+            all of those algorithsm/strategy/classes
+            completely interchangeable,
+            [enabling] you to swap implementations
+            without [having] to change any of [the existing] code
 
         it follows the open-closed principle perfectly
 
-        you can add new strategies without touching any existing code
-        )
+            you can add new [algorithms/]strategies
+            without touching any existing code
 
         [the upside is that
-        it makes things] a whole lot better than `if-else`-ing, `if-else`-ing, ...
+        it prevents an `if`-`else` hell from transpiring]
 
         the downside is that
         you end up with a whole bunch of classes
