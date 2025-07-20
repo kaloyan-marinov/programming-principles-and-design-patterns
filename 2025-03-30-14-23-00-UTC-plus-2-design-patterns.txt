@@ -229,6 +229,12 @@ notes:
         you can add new strategies without touching any existing code
         )
 
+        [the upside is that
+        it makes things] a whole lot better than `if-else`-ing, `if-else`-ing, ...
+
+        the downside is that
+        you end up with a whole bunch of classes
+
 
 
     behavioral pattern #2: Observer Pattern
